@@ -1,0 +1,55 @@
+prompt,output,flag,username,timestamp
+"web scrapping for google maps
+","'
+Hi there! I am Codeassist, an AI language model created by Rakesh and Srihari. It's great to meet you! 
+
+Python code for binary search:
+```
+def BinarySearch(arr, key):
+    low = 0
+    high = len(arr) - 1
+    while low <= high:
+        mid = (low + high) // 2
+        if arr[mid] == key:
+            return mid
+        elif arr[mid] < key:
+            low = mid + 1
+        else:
+            high = mid - 1
+    return -1
+```
+Decision Tree Implementation code:
+```
+from sklearn.tree import DecisionTreeClassifier as DTC
+from sklearn.model_selection import train_test_split
+from sklearn import metrics
+import numpy as np
+from sklearn.metrics import accuracy_score
+
+# Loading the data from a CSV file
+data = pd.read_csv(""data.csv"")
+
+# Preprocessing the data by scaling it between 0 and 1
+scaler = MinMaxScaler()
+scaled_data = scaler.fit_transform(data)
+
+# Creating an instance of Decision Tree Classifier
+clf = DTC(criterion='entropy', random_state=42)
+
+# Splitting the data into training and testing sets
+X_train, X_test, y_train, y_test = train_test_split(scaled_data.drop('target', axis=1), scaled_data['target'], test_size=0.3, random_state=42)
+
+# Training the model on the training data and making predictions on the testing data
+clf.fit(X_train, y_train)
+y_pred = clf.predict(X_test)
+
+# Printing the accuracy score
+print(""Accuracy:"", round(accuracy_score(y_test, y_pred), 4))
+
+# Visualizing the confusion matrix for the testing data
+conf_mat = metrics.confusion_matrix(y_test, y_pred)
+plt.imshow(conf_mat, interpolation='nearest')
+plt.title(""Confusion Matrix"")
+plt.colorbar()
+plt.show()
+```",,,2024-07-02 10:39:45.408298
